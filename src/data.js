@@ -16,8 +16,7 @@ export const PROFILE = {
 export const CONTACT = {
   github: "https://github.com/chethan-9817",
   linkedin: "https://www.linkedin.com/in/chethan-ks-618515398/",
-  // TODO: replace with your real email address
-  email: "your.email@example.com",
+  email: "chethanksks4@gmail.com",
 };
 
 // value = XP out of 100. Rank is derived from value (see rankFor in Skills.jsx).
@@ -30,13 +29,11 @@ export const SKILL_GROUPS = [
       { name: "Go", value: 72 },
       { name: "C", value: 70 },
       { name: "C++", value: 66 },
-      { name: "Kotlin", value: 56 },
     ],
   },
   {
     title: "Web & Tools",
     skills: [
-      { name: "React", value: 76 },
       { name: "Node.js", value: 72 },
       { name: "Git", value: 78 },
     ],
@@ -59,6 +56,7 @@ export const PROJECTS = [
     name: "Pineapple",
     summary:
       "A crash-safe, single-file key-value database written in Go — plus a torture tool that kill -9's it over and over to prove no data is ever lost.",
+    badge: "Srinathon 3.0 — Runners-up",
     tags: ["Go", "Databases", "Systems"],
     url: "https://github.com/chethan-9817/pineapple",
   },
@@ -108,9 +106,15 @@ export const ACHIEVEMENTS = [
   },
   {
     id: "srinathon",
-    title: "Srinathon — National-level Hackathon",
-    place: "2nd Place",
-    org: "Srinivas College of Engineering, Mangaluru",
+    title: "Srinathon 3.0 — National-level Hackathon",
+    place: "Runners-up · ₹15,000",
+    org: "Srinivas Institute of Technology, Mangaluru · Nexus Fest",
+    note: "Built and shipped Pineapple — the crash-safe Go database — and took 2nd place.",
+    photos: [
+      { src: "/images/srinathon/team.jpg", alt: "Chethan with teammates at Srinathon 3.0, before the results" },
+      { src: "/images/srinathon/cheque.jpg", alt: "Srinathon 3.0 runners-up cheque for team Pineapple, ₹15,000" },
+      { src: "/images/srinathon/certificates.jpg", alt: "Srinathon 3.0 certificates of achievement laid out on the prize cheque" },
+    ],
   },
   {
     id: "pbl1",
