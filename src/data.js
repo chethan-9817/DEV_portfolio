@@ -123,6 +123,7 @@ export const ACHIEVEMENTS = [
     org: "Course-level PBL · Semester 1",
     note: "Monitored bin weight and fill levels with ESP32 and MQTT, then planned smarter collection routes.",
     tags: ["IoT", "ESP32", "MQTT", "Routing"],
+    art: "waste",
     url: "https://github.com/chethan-9817/wastemanagement-the-software-prototype",
   },
   {
@@ -130,8 +131,9 @@ export const ACHIEVEMENTS = [
     title: "Self-Healing Battery",
     place: "3rd Prize",
     org: "Course-level PBL · Semester 2",
-    note: "A research-heavy team project: we dug deep into how batteries can repair their own damage, then built our version of it.",
-    tags: ["Research", "Energy", "Materials"],
+    note: "A research-heavy team project: we dug deep into how batteries can repair their own damage, then simulated the self-healing process.",
+    tags: ["Research", "Simulation", "Energy"],
+    art: "battery",
   },
 ];
 

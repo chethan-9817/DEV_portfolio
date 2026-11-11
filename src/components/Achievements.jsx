@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { SectionHeading } from "./SystemPanel.jsx";
 import { Drone, FighterJet, RCPlane } from "./Aircraft.jsx";
+import PblArt from "./PblArt.jsx";
 import { ACHIEVEMENTS } from "../data.js";
 
 const byId = Object.fromEntries(ACHIEVEMENTS.map((a) => [a.id, a]));
@@ -245,7 +246,12 @@ export default function Achievements() {
           {rest.map((a) => (
             <motion.article key={a.id} {...pop} className="card flex flex-col">
               <Head a={a} />
-              <div className="flex flex-1 flex-col px-5 pb-5 pt-2 sm:px-6 sm:pb-6">
+              {a.art && (
+                <div className="mx-5 mt-3 aspect-[16/7] overflow-hidden rounded-xl sm:mx-6">
+                  <PblArt kind={a.art} />
+                </div>
+              )}
+              <div className="flex flex-1 flex-col px-5 pb-5 pt-4 sm:px-6 sm:pb-6">
                 <p className="kicker">{a.org}</p>
                 <h3 className="mt-2 font-display text-xl tracking-tight sm:text-2xl">{a.title}</h3>
                 {a.note && <p className="mt-2 flex-1 leading-relaxed text-ink/75">{a.note}</p>}
