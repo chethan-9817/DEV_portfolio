@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         ink: "#141414",
-        paper: "#f5f4ef",
+        paper: "#fafaf8",
         orange: { DEFAULT: "#ff5a1f", soft: "#ffe3d6" },
         sky: { DEFAULT: "#2f6fed", soft: "#e4edff" },
         muted: "#6b6a65",

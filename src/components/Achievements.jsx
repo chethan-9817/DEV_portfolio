@@ -33,12 +33,11 @@ function QuestToasts({ trigger }) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 80 }}
             transition={{ type: "spring", stiffness: 320, damping: 26 }}
-            className="card px-4 py-3"
-            style={{ boxShadow: "4px 4px 0 #ff5a1f" }}
+            className="card px-4 py-3 shadow-lg"
           >
-            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-green-700">✓ Quest cleared</p>
+            <p className="text-xs font-semibold text-green-700">✓ Quest cleared</p>
             <p className="mt-1 truncate text-sm font-semibold">{a.title}</p>
-            <p className="font-mono text-[11px] text-orange">Reward: {a.place}</p>
+            <p className="text-xs text-orange">Reward: {a.place}</p>
           </motion.div>
         ))}
       </AnimatePresence>
@@ -62,20 +61,20 @@ function Airspace() {
   ];
 
   return (
-    <div className="relative h-52 overflow-hidden border-b-[1.5px] border-ink bg-sky-soft sm:h-60">
+    <div className="relative mx-5 mt-4 h-52 overflow-hidden rounded-xl bg-sky-soft sm:mx-6 sm:h-60">
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(47,111,237,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(47,111,237,0.14) 1px, transparent 1px)",
+            "linear-gradient(rgba(47,111,237,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(47,111,237,0.08) 1px, transparent 1px)",
           backgroundSize: "36px 36px",
         }}
       />
-      <div className="absolute right-4 top-4 h-16 w-16 overflow-hidden rounded-full border-[1.5px] border-sky bg-white/60">
+      <div className="absolute right-4 top-4 h-16 w-16 overflow-hidden rounded-full border border-sky/40 bg-white/60">
         <div className="radar-sweep absolute inset-0 rounded-full" />
         <div className="absolute inset-[30%] rounded-full border border-sky/50" />
       </div>
-      <p className="absolute left-3 top-3 bg-white px-2 py-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-sky">
+      <p className="absolute left-3 top-3 rounded-full bg-white px-2.5 py-1 text-xs font-medium text-sky">
         ● Airspace live — VIT Vellore
       </p>
 
@@ -199,7 +198,7 @@ export default function Achievements() {
         {/* Srinathon — with photos */}
         <motion.article {...pop} className="card">
           <Head a={sri} />
-          <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-5">
+          <div className="grid gap-6 px-5 pb-5 pt-3 sm:px-6 sm:pb-6 lg:grid-cols-5">
             <div className="lg:col-span-2">
               <p className="kicker">National level</p>
               <h3 className="mt-2 font-display text-2xl leading-tight tracking-tight sm:text-3xl">{sri.title}</h3>
@@ -212,11 +211,11 @@ export default function Achievements() {
                   key={ph.src}
                   onClick={() => setPhoto(ph)}
                   initial={{ opacity: 0, y: 20, rotate: 0 }}
-                  whileInView={{ opacity: 1, y: 0, rotate: [-2, 1.5, -1][i] }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.12 * i }}
-                  whileHover={{ rotate: 0, scale: 1.04, zIndex: 2 }}
-                  className="relative aspect-[3/4] border-[1.5px] border-ink bg-white p-1.5 shadow-[3px_3px_0_#141414]"
+                  whileHover={{ scale: 1.03 }}
+                  className="relative aspect-[3/4] overflow-hidden rounded-xl bg-paper"
                   aria-label={`Open photo: ${ph.alt}`}
                 >
                   <img src={ph.src} alt={ph.alt} loading="lazy" className="h-full w-full object-cover" />
@@ -246,7 +245,7 @@ export default function Achievements() {
           {rest.map((a) => (
             <motion.article key={a.id} {...pop} className="card">
               <Head a={a} />
-              <div className="p-5">
+              <div className="px-5 pb-5 pt-2 sm:px-6 sm:pb-6">
                 <h3 className="font-display text-xl tracking-tight">{a.title}</h3>
                 <p className="mt-1 font-mono text-xs text-muted">{a.org}</p>
               </div>

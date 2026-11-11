@@ -59,8 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="card inline-flex max-w-full items-center gap-3 px-4 py-2.5"
-          style={{ boxShadow: "4px 4px 0 #2f6fed" }}
+          className="inline-flex max-w-full items-center gap-3 rounded-full border border-ink/10 bg-white px-4 py-2 shadow-sm"
         >
           <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inset-0 animate-ping rounded-full bg-orange opacity-60" />
@@ -89,7 +88,7 @@ export default function Hero() {
               initial={{ scale: 0, rotate: -30 }}
               animate={done ? { scale: 1, rotate: -8 } : {}}
               transition={{ type: "spring", stiffness: 260, damping: 14 }}
-              className="mb-[0.12em] inline-flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-full border-[2.5px] border-orange text-orange sm:h-28 sm:w-28"
+              className="mb-[0.12em] inline-flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-full border-2 border-orange text-orange sm:h-28 sm:w-28"
             >
               <span className="font-mono text-[10px] font-semibold tracking-widest sm:text-xs">LEVEL</span>
               <span className="font-display text-3xl leading-none sm:text-5xl">02</span>
@@ -103,13 +102,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mt-8 grid gap-8 border-t-[1.5px] border-ink pt-6 md:grid-cols-[1fr_auto] md:items-end"
+              className="mt-8 grid gap-8 border-t border-ink/10 pt-6 md:grid-cols-[1fr_auto] md:items-end"
             >
               <div>
-                <p className="max-w-xl text-lg leading-snug sm:text-2xl">“{PROFILE.tagline}”</p>
-                <p className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-muted">
-                  CS-DS · SJEC, Mangaluru · Aero Club
-                </p>
+                <p className="max-w-xl text-lg leading-snug text-ink/80 sm:text-2xl">“{PROFILE.tagline}”</p>
+                <p className="mt-3 text-sm text-muted">CS-DS student · SJEC, Mangaluru · Aero Club</p>
               </div>
               <div className="flex flex-wrap items-center gap-5">
                 <a href="#about" className="btn">
@@ -117,7 +114,7 @@ export default function Hero() {
                 </a>
                 <button
                   onClick={() => setDeclined(true)}
-                  className="font-mono text-xs uppercase tracking-[0.18em] text-muted underline-offset-4 hover:text-ink hover:underline"
+                  className="text-sm font-medium text-muted underline-offset-4 hover:text-ink hover:underline"
                 >
                   Decline
                 </button>

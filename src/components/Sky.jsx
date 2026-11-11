@@ -92,9 +92,9 @@ export default function Sky() {
       first = false;
       if (!document.hidden) {
         const f = makeFlight(kind);
-        setFlights((fs) => (fs.length >= 3 ? fs : [...fs, f]));
+        setFlights((fs) => (fs.length >= 2 ? fs : [...fs, f]));
       }
-      t = setTimeout(spawn, rand(3200, 6500));
+      t = setTimeout(spawn, rand(6000, 11000));
     };
     t = setTimeout(spawn, 900);
     return () => clearTimeout(t);
@@ -103,7 +103,7 @@ export default function Sky() {
   const remove = (id) => setFlights((fs) => fs.filter((f) => f.id !== id));
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-20 overflow-hidden" aria-hidden="true">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
       {flights.map((f) => (
         <motion.div
           key={f.id}

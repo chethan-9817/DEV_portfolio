@@ -33,9 +33,9 @@ export default function About() {
               <br />→ next: Lv. 03
             </p>
           </div>
-          <div className="mb-6 h-3 border-[1.5px] border-ink">
+          <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-ink/[0.07]">
             <motion.div
-              className="h-full bg-orange"
+              className="h-full rounded-full bg-orange"
               initial={{ width: 0 }}
               whileInView={{ width: "50%" }}
               viewport={{ once: true }}
@@ -70,10 +70,10 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 + i * 0.08 }}
-                className="border-[1.5px] border-ink p-3"
+                className="rounded-xl bg-paper p-3.5"
               >
                 <p className="font-display text-3xl leading-none">{val}</p>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-muted">{label}</p>
+                <p className="mt-2 text-xs text-muted">{label}</p>
               </motion.div>
             ))}
           </div>

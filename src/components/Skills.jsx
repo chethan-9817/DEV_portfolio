@@ -17,7 +17,7 @@ function XPBar({ name, value, i }) {
   return (
     <div className="flex items-center gap-3">
       <span
-        className="flex h-9 w-9 shrink-0 items-center justify-center border-[1.5px] border-ink font-display text-base"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-paper font-display text-base"
         style={{ color: rank.color }}
         title={`Rank ${rank.r}`}
       >
@@ -28,18 +28,14 @@ function XPBar({ name, value, i }) {
           <span className="font-medium">{name}</span>
           <span className="font-mono text-xs text-muted">{value * 10} xp</span>
         </div>
-        <div className="relative h-3 border-[1.5px] border-ink bg-white">
+        <div className="relative h-1.5 overflow-hidden rounded-full bg-ink/[0.07]">
           <motion.div
-            className="absolute inset-y-0 left-0"
+            className="absolute inset-y-0 left-0 rounded-full"
             style={{ background: rank.color }}
             initial={{ width: 0 }}
             whileInView={{ width: `${value}%` }}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 1.1, ease: "easeOut", delay: i * 0.08 }}
-          />
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{ backgroundImage: "repeating-linear-gradient(90deg, transparent 0 calc(10% - 2px), #fff calc(10% - 2px) 10%)" }}
           />
         </div>
       </div>

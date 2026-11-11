@@ -17,20 +17,20 @@ function ProjectCard({ p, i }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: (i % 2) * 0.1 }}
-      whileHover={{ x: -3, y: -3 }}
-      className="card group flex flex-col transition-shadow hover:shadow-[9px_9px_0_#ff5a1f]"
+      whileHover={{ y: -4 }}
+      className="card group flex flex-col transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/[0.08]"
     >
       <div className="card-head">
-        <span>No. {String(i + 1).padStart(2, "0")}</span>
-        <span className="text-green-700">✓ Cleared</span>
+        <span className="font-mono">{String(i + 1).padStart(2, "0")}</span>
+        <span className="rounded-full bg-green-50 px-2 py-0.5 text-green-700">✓ Cleared</span>
       </div>
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      <div className="flex flex-1 flex-col px-5 pb-5 pt-3 sm:px-6 sm:pb-6">
         <h3 className="font-display text-2xl tracking-tight sm:text-3xl">
           {p.name}
           {p.alias && <span className="ml-2 font-mono text-xs font-normal text-muted">({p.alias})</span>}
         </h3>
         {p.badge && (
-          <p className="mt-2 inline-flex self-start bg-orange px-2 py-0.5 font-mono text-[11px] font-medium uppercase tracking-wider text-white">
+          <p className="mt-2 inline-flex self-start rounded-full bg-orange-soft px-2.5 py-1 text-xs font-semibold text-orange">
             ★ {p.badge}
           </p>
         )}
@@ -46,7 +46,7 @@ function ProjectCard({ p, i }) {
           href={p.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 self-start border-b-[1.5px] border-ink pb-0.5 font-mono text-xs font-medium uppercase tracking-[0.15em] transition hover:border-orange hover:text-orange"
+          className="mt-6 inline-flex items-center gap-2 self-start text-sm font-semibold transition hover:text-orange"
         >
           <GitHubIcon /> View source <span className="transition group-hover:translate-x-1">→</span>
         </a>

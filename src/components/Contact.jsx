@@ -34,9 +34,9 @@ export default function Contact() {
                   href={l.href}
                   target={l.label === "Email" ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between gap-3 border-[1.5px] border-ink px-4 py-3 transition hover:bg-ink hover:text-white"
+                  className="group flex items-center justify-between gap-3 rounded-xl border border-ink/10 px-4 py-3 transition hover:border-ink/25 hover:bg-paper"
                 >
-                  <span className="font-mono text-xs uppercase tracking-[0.18em]">{l.label}</span>
+                  <span className="text-sm text-muted group-hover:text-ink">{l.label}</span>
                   <span className="truncate text-sm font-medium">
                     {l.value} <span className="text-orange">→</span>
                   </span>
@@ -51,11 +51,11 @@ export default function Contact() {
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block">
-                <span className="mb-1 block font-mono text-[11px] uppercase tracking-widest text-muted">Name</span>
+                <span className="mb-1.5 block text-sm font-medium text-ink/70">Name</span>
                 <input required className="field" value={form.name} onChange={set("name")} placeholder="Your name" />
               </label>
               <label className="block">
-                <span className="mb-1 block font-mono text-[11px] uppercase tracking-widest text-muted">Email</span>
+                <span className="mb-1.5 block text-sm font-medium text-ink/70">Email</span>
                 <input
                   required
                   type="email"
@@ -67,7 +67,7 @@ export default function Contact() {
               </label>
             </div>
             <label className="block">
-              <span className="mb-1 block font-mono text-[11px] uppercase tracking-widest text-muted">Message</span>
+              <span className="mb-1.5 block text-sm font-medium text-ink/70">Message</span>
               <textarea
                 required
                 rows={5}
@@ -81,7 +81,7 @@ export default function Contact() {
               <button type="submit" className="btn">
                 Send →
               </button>
-              {sent && <span className="font-mono text-xs text-green-700">✓ Opening your mail app…</span>}
+              {sent && <span className="text-sm text-green-700">✓ Opening your mail app…</span>}
             </div>
           </form>
         </SystemPanel>

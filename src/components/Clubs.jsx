@@ -26,14 +26,14 @@ export default function Clubs() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
-                className="flex items-start gap-4 border-[1.5px] border-ink p-4"
+                className="flex items-start gap-4 rounded-xl border border-ink/10 p-4"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-paper">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-paper">
                   {c.icon === "plane" ? <RCPlane className="h-6 w-11" /> : <CodeIcon />}
                 </div>
                 <div>
                   <p className="font-display text-lg tracking-tight">{c.name}</p>
-                  <p className="font-mono text-[11px] uppercase tracking-widest text-orange">{c.rank}</p>
+                  <p className="text-xs font-semibold text-orange">{c.rank}</p>
                   <p className="mt-1 text-sm text-ink/70">{c.desc}</p>
                 </div>
               </motion.li>
@@ -52,14 +52,14 @@ export default function Clubs() {
                 transition={{ delay: 0.1 * i }}
                 className="flex items-center gap-4 py-3"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-ink text-lg">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-paper text-lg">
                   {it.icon}
                 </span>
                 <span className="font-medium">{it.label}</span>
               </motion.li>
             ))}
           </ul>
-          <p className="mt-4 font-mono text-xs text-muted">Effect: +10% motivation whenever a story involves levelling up.</p>
+          <p className="mt-4 text-sm text-muted">Effect: +10% motivation whenever a story involves levelling up.</p>
         </SystemPanel>
       </div>
     </section>

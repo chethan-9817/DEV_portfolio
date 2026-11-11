@@ -13,12 +13,10 @@ export default function PlaneDivider({ reverse = false, label, craft = "plane" }
     );
 
   return (
-    <div className="relative mx-auto my-6 h-24 max-w-6xl overflow-hidden px-4 sm:h-28 sm:px-6" aria-hidden="true">
-      <div className="absolute inset-x-4 top-1/2 border-t-[1.5px] border-dashed border-ink/25 sm:inset-x-6" />
-      <span className="absolute left-4 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 border-[1.5px] border-ink bg-paper sm:left-6" />
-      <span className="absolute right-4 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 border-[1.5px] border-ink bg-orange sm:right-6" />
+    <div className="relative mx-auto my-10 h-24 max-w-6xl overflow-hidden px-4 sm:h-28 sm:px-6" aria-hidden="true">
+      <div className="absolute inset-x-4 top-1/2 border-t border-dashed border-ink/15 sm:inset-x-6" />
       {label && (
-        <p className="absolute inset-x-0 top-1/2 mt-3 text-center font-mono text-[10px] uppercase tracking-[0.35em] text-muted">
+        <p className="absolute inset-x-0 top-1/2 mt-3 text-center font-mono text-[10px] uppercase tracking-[0.3em] text-ink/30">
           {label}
         </p>
       )}

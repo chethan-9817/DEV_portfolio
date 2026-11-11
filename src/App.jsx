@@ -15,21 +15,21 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <Sky />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
-        <PlaneDivider craft="plane" label="Waypoint 01 → 02" />
+        <PlaneDivider craft="plane" />
         <Skills />
-        <PlaneDivider craft="jet" reverse label="Waypoint 02 → 03" />
+        <PlaneDivider craft="jet" reverse />
         <Projects />
-        <PlaneDivider craft="drone" label="Waypoint 03 → 04" />
+        <PlaneDivider craft="drone" />
         <Achievements />
-        <PlaneDivider craft="jet" label="Waypoint 04 → 05" />
+        <PlaneDivider craft="jet" />
         <Clubs />
-        <PlaneDivider craft="plane" reverse label="Waypoint 05 → 06" />
+        <PlaneDivider craft="plane" reverse />
         <Contact />
       </main>
-      <footer className="mx-auto mt-24 flex max-w-6xl flex-wrap items-center justify-between gap-2 border-t-[1.5px] border-ink px-4 py-6 font-mono text-xs text-muted sm:px-6">
+      <footer className="relative z-10 mx-auto mt-24 flex max-w-6xl flex-wrap items-center justify-between gap-2 border-t border-ink/10 px-4 py-8 text-sm text-muted sm:px-6">
         <p>© {new Date().getFullYear()} Chethan K S</p>
         <p>Mangaluru, India</p>
       </footer>
