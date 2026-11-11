@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
 import { SectionHeading } from "./SystemPanel.jsx";
 import { Drone, FighterJet, RCPlane } from "./Aircraft.jsx";
 import PblArt from "./PblArt.jsx";
@@ -170,6 +170,7 @@ export default function Achievements() {
   const vitSeen = useInView(vitRef, { once: true, amount: 0.5 });
   const [flyover, setFlyover] = useState(false);
   const [photo, setPhoto] = useState(null);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (!vitSeen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -240,6 +241,42 @@ export default function Achievements() {
               2<span className="text-2xl">nd</span>
             </p>
           </div>
+          {vit.media && (
+            <div className="grid auto-rows-[150px] grid-cols-2 gap-2 px-5 pb-5 sm:auto-rows-[190px] sm:grid-cols-4 sm:gap-3 sm:px-6 sm:pb-6">
+              {vit.media.map((m, i) => (
+                <motion.button
+                  key={m.src}
+                  onClick={() => setPhoto(m)}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i }}
+                  whileHover={{ scale: 1.02 }}
+                  className={`relative overflow-hidden rounded-xl bg-paper ${i < 2 ? "row-span-2" : "col-span-2"}`}
+                  aria-label={`Open ${m.type === "video" ? "video" : "photo"}: ${m.alt}`}
+                >
+                  {m.type === "video" ? (
+                    <>
+                      <video
+                        src={m.src}
+                        muted
+                        loop
+                        playsInline
+                        autoPlay={!reduceMotion}
+                        preload="metadata"
+                        className="h-full w-full object-cover"
+                      />
+                      <span className="absolute bottom-2 left-2 rounded-full bg-white/90 px-2.5 py-1 text-xs font-semibold">
+                        ▶ Watch
+                      </span>
+                    </>
+                  ) : (
+                    <img src={m.src} alt={m.alt} loading="lazy" className="h-full w-full object-cover" />
+                  )}
+                </motion.button>
+              ))}
+            </div>
+          )}
         </motion.article>
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -299,7 +336,11 @@ export default function Achievements() {
               className="card max-h-full max-w-4xl p-2"
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={photo.src} alt={photo.alt} className="max-h-[78vh] w-auto" />
+              {photo.type === "video" ? (
+                <video src={photo.src} controls autoPlay playsInline className="max-h-[78vh] w-auto rounded-lg" aria-label={photo.alt} />
+              ) : (
+                <img src={photo.src} alt={photo.alt} className="max-h-[78vh] w-auto" />
+              )}
               <figcaption className="flex items-center justify-between gap-4 px-2 pt-2 font-mono text-xs text-muted">
                 {photo.alt}
                 <button onClick={() => setPhoto(null)} className="font-medium text-ink hover:text-orange">

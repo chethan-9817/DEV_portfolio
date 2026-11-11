@@ -103,6 +103,12 @@ export const ACHIEVEMENTS = [
     org: "VIT Vellore",
     featured: true,
     note: "Took to the skies and came back with silver.",
+    media: [
+      { type: "image", src: "/images/vit/plane.jpg", alt: "Chethan holding an RC plane on the flying field at VIT Aerodominator" },
+      { type: "video", src: "/images/vit/flight.mp4", alt: "Video from the VIT Aerodominator competition" },
+      { type: "image", src: "/images/vit/lineup.jpg", alt: "Teams lined up with their RC planes at SAE VIT Aerodominator" },
+      { type: "image", src: "/images/vit/team.jpg", alt: "The group at the Vellore Institute of Technology entrance at night" },
+    ],
   },
   {
     id: "srinathon",
