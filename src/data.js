@@ -104,7 +104,7 @@ export const ACHIEVEMENTS = [
     featured: true,
     note: "Built an RC plane as a team, flew it at SAE VIT's Aerodominator, and came back with silver.",
     media: [
-      { type: "image", src: "/images/vit/plane.jpg", alt: "Chethan holding the RC plane the team built, on the flying field at VIT Aerodominator" },
+      { type: "image", src: "/images/vit/plane.jpg", alt: "RC plane built by our team" },
       { type: "video", src: "/images/vit/flight.mp4", alt: "Video from the VIT Aerodominator competition" },
       { type: "image", src: "/images/vit/lineup.jpg", alt: "Teams lined up with their RC planes at SAE VIT Aerodominator" },
       { type: "image", src: "/images/vit/team.jpg", alt: "The group at the Vellore Institute of Technology entrance at night" },
