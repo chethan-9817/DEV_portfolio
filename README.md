@@ -16,7 +16,7 @@ and drones fly across the page, a nod to my RC aviation work and the 2nd place a
 - **Major projects:** Pineapple, PharmaFlow, StudentSync, ArriveShare, with GitHub links
 - **Achievements:** a quest log with "Quest cleared" pop-ups
   - Srinathon 3.0 (national-level hackathon): runners-up, ₹15,000, with Pineapple, plus photos
-  - VIT Aerodominator: 2nd place, with a live airspace of jets, planes and drones
+  - VIT Aerodominator: 2nd place with an RC plane our team built, plus photos, a video and a live airspace of jets, planes and drones
   - PBL Sem 1, 2nd prize: Smart Waste Management & Routing (ESP32 + MQTT)
   - PBL Sem 2, 3rd prize: Self-Healing Battery (research + simulation)
 - **Clubs & interests:** Aero Club, Sceptix Club, anime, aviation
