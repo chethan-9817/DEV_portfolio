@@ -118,15 +118,20 @@ export const ACHIEVEMENTS = [
   },
   {
     id: "pbl1",
-    title: "Course-level PBL Project",
+    title: "Smart Waste Management & Routing",
     place: "2nd Prize",
-    org: "Semester 1",
+    org: "Course-level PBL · Semester 1",
+    note: "Monitored bin weight and fill levels with ESP32 and MQTT, then planned smarter collection routes.",
+    tags: ["IoT", "ESP32", "MQTT", "Routing"],
+    url: "https://github.com/chethan-9817/wastemanagement-the-software-prototype",
   },
   {
     id: "pbl2",
-    title: "Course-level PBL Project",
+    title: "Self-Healing Battery",
     place: "3rd Prize",
-    org: "Semester 2",
+    org: "Course-level PBL · Semester 2",
+    note: "A research-heavy team project: we dug deep into how batteries can repair their own damage, then built our version of it.",
+    tags: ["Research", "Energy", "Materials"],
   },
 ];
 

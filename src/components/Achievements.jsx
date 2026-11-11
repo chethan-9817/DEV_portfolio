@@ -243,11 +243,31 @@ export default function Achievements() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           {rest.map((a) => (
-            <motion.article key={a.id} {...pop} className="card">
+            <motion.article key={a.id} {...pop} className="card flex flex-col">
               <Head a={a} />
-              <div className="px-5 pb-5 pt-2 sm:px-6 sm:pb-6">
-                <h3 className="font-display text-xl tracking-tight">{a.title}</h3>
-                <p className="mt-1 font-mono text-xs text-muted">{a.org}</p>
+              <div className="flex flex-1 flex-col px-5 pb-5 pt-2 sm:px-6 sm:pb-6">
+                <p className="kicker">{a.org}</p>
+                <h3 className="mt-2 font-display text-xl tracking-tight sm:text-2xl">{a.title}</h3>
+                {a.note && <p className="mt-2 flex-1 leading-relaxed text-ink/75">{a.note}</p>}
+                {a.tags && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {a.tags.map((t) => (
+                      <span key={t} className="tag">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {a.url && (
+                  <a
+                    href={a.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-1 self-start text-sm font-semibold transition hover:text-orange"
+                  >
+                    View source <span>→</span>
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}

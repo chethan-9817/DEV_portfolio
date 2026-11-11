@@ -17,7 +17,8 @@ and drones fly across the page, a nod to my RC aviation work and the 2nd place a
 - **Achievements:** a quest log with "Quest cleared" pop-ups
   - Srinathon 3.0 (national-level hackathon): runners-up, ₹15,000, with Pineapple, plus photos
   - VIT Aerodominator: 2nd place, with a live airspace of jets, planes and drones
-  - PBL projects: 2nd prize (Sem 1) and 3rd prize (Sem 2)
+  - PBL Sem 1, 2nd prize: Smart Waste Management & Routing (ESP32 + MQTT)
+  - PBL Sem 2, 3rd prize: Self-Healing Battery (research project)
 - **Clubs & interests:** Aero Club, Sceptix Club, anime, aviation
 - **Contact:** GitHub, LinkedIn, email, and a message form
 
